@@ -1,0 +1,11 @@
+{
+    "name": "gutergues/modelo_mvc",
+    "description": "MVC Structure Model",
+    "authors": [
+        {
+            "name": "Gutergues Gomes",
+            "email": "gutergues@gmail.com"
+        }
+    ],
+    "require": {}
+}
