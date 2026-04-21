@@ -5,6 +5,8 @@ error_reporting(E_ALL);
 
 require_once('../app/core/Router.php');
 
+require_once(__DIR__ . "/../vendor/autoload.php");
+
 //use app\core\Router;
 
 // Obtém a URL que foi passada pelo .htaccess
