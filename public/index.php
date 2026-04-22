@@ -3,11 +3,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once('../app/core/Router.php');
+//require_once('../app/core/Router.php');
+
+require_once(__DIR__ . '/../app/core/functions.php');
 
 require_once(__DIR__ . "/../vendor/autoload.php");
 
-//use app\core\Router;
+use App\Core\Router;
 
 // Obtém a URL que foi passada pelo .htaccess
 //$url = isset($_GET['url']) ? '/' . $_GET['url'] : '/';

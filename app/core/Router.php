@@ -1,19 +1,29 @@
 <?php
-require_once('../app/controllers/HomeController.php');
+
+namespace App\Core;
+
+use App\Controllers\HomeController;
+use App\Controllers\Errors\HttpErrorController;
+
+//require_once('../app/controllers/HomeController.php');
 //require_once('../app/controllers/SobreController.php');
-require_once('../app/controllers/NoticiasController.php');
-require_once('../app/controllers/errors/HttpErrorController.php');
+//require_once('../app/controllers/NoticiasController.php');
+//require_once('../app/controllers/errors/HttpErrorController.php');
 
 class Router {
     public function dispatch($url)
     {
         $url = trim($url, '/');
-        
         $parts = $url ? explode('/', $url) : [];
         
+		
         $controllerName = $parts[0] ?? 'Home';
-        $controllerName = ucfirst($controllerName).'Controller';
+		
+        $controllerName = 'App\Controllers\\' . ucfirst($controllerName).'Controller';
+		
         $actionName = $parts[1] ?? 'index';
+		
+		//dd($actionName, $controllerName);
         
         
         if (!class_exists($controllerName))
@@ -34,6 +44,8 @@ class Router {
         
         $params = array_slice($parts, 2);
         
+		dd($params);
+		
         //var_dump($params);
         //exit;
         

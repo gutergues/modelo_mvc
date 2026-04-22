@@ -1,7 +1,12 @@
 <?php
+
+namespace App\Controllers\Erros;
+
+use App\Core\Controller;
+
 class HttpErrorController extends Controller
 {
-    public function NotFound()
+    public function notFound()
     {
         // retorna o status 404
         http_response_code(404);
@@ -9,7 +14,7 @@ class HttpErrorController extends Controller
         $this->view('erros/404');
     }
     
-    public function InternalServerError()
+    public function internalServerError()
     {
         http_response_code(500);
         
